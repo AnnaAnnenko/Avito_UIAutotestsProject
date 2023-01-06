@@ -18,16 +18,25 @@ public class MainPage {
 
     private SelenideElement buttonAllCategories = $("[data-marker='top-rubricator/all-categories']");
 
-    private SelenideElement searchByAdvt = $("[data-marker='search-form/suggest']");
+    private SelenideElement searchByBlanks = $("[data-marker='search-form/suggest']");
 
     private SelenideElement buttonSearch = $("[data-marker='search-form/submit-button']");
 
-    private ElementsCollection listDropDownSearchByAdvt = $$("[data-marker='suggest/list/custom-option']");
+    private ElementsCollection listDropDownSearchByBlanks = $$("[data-marker='suggest/list/custom-option']");
 
-    private ElementsCollection listAllCategories = $$(".new-rubricator-content-leftcontent-my5E0");
+    private ElementsCollection listAllCategories = $$("[data-marker^='top-rubricator/root-category-']");
 
-    public static void checkVisibleElementByText(String elementText) {
-        $(byText(elementText)).shouldBe(visible);
+    private SelenideElement popupYourCity = $(".tooltip-content-ITwm0");
+
+    private SelenideElement buttonYesInPopupYourCity = $("[data-marker='location/tooltip-agree']");
+
+    private SelenideElement buttonChangeInPopupYourCity = $("[data-marker='location/tooltip-change']");
+    private SelenideElement selectRegion = $("[data-marker='search-form/region']");
+
+    @Step("Нажимаем Да в автоопределении города")
+    public MainPage clickYesInPopupYourCity() {
+        buttonYesInPopupYourCity.click();
+        return this;
     }
 
     @Step("Открываем главную страницу Авито")
@@ -44,7 +53,7 @@ public class MainPage {
 
     @Step("Устанавливаем курсор в Поиск по объявлениям")
     public MainPage focusToSearchByAdvt() {
-        searchByAdvt.click();
+        searchByBlanks.click();
 
         return this;
     }
@@ -56,16 +65,21 @@ public class MainPage {
 
     @Step("Выбираем {vacancy} из дропдауна поиска")
     public void selectFromSearchDropdown(String vacancy) {
-        listDropDownSearchByAdvt.findBy(Condition.text(vacancy)).click();
+        listDropDownSearchByBlanks.findBy(Condition.text(vacancy)).click();
     }
 
     @Step("Отображается логотип Авито")
     public void logoDisplay() {
         logo.shouldBe(visible);
+        sleep(10000000);
     }
 
-    @Step("Проверяем, что все элементы отображаются")
-    public void allElementsDisplayed(List<String> textList) {
-        textList.forEach(MainPage:: checkVisibleElementByText);
-    }
+//    @Step("Проверяем, что отображается категория с именем")
+//    public void categoryDisplay(String nameOfCategory) {
+//        for (SelenideElement category : listAllCategories) {
+//            category.shouldHave(text(nameOfCategory));
+//        }
+//    }
+
+
 }
