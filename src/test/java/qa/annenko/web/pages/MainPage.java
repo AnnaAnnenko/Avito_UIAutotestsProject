@@ -39,6 +39,17 @@ public class MainPage {
         return this;
     }
 
+    @Step("Нажимаем Изменить в автоопределении города")
+    public MainPage clickChangeInPopupYourCity() {
+        buttonChangeInPopupYourCity.click();
+        return this;
+    }
+
+    @Step("Отображается попап Ваш город")
+    public void checkPopupYourCityDisplay() {
+        popupYourCity.shouldBe(visible);
+    }
+
     @Step("Открываем главную страницу Авито")
     public MainPage openMainPage() {
         open("https://www.avito.ru/");
