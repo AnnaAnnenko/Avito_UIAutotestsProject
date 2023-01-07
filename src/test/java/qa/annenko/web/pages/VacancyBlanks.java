@@ -11,28 +11,19 @@ import static com.codeborne.selenide.Selenide.*;
 public class VacancyBlanks {
 
     private SelenideElement logo = $("[data-marker='search-form/logo']");
-
     private SelenideElement headerPopularVacancy = $("[data-marker='popular-rubricator/controls/header']");
-
     private ElementsCollection listOfPopularVacancy = $$("[data-marker='popular-rubricator/links/row']");
-
     private ElementsCollection listOfBlanks = $$("[data-marker='catalog-serp']");
-
     private SelenideElement buttonShowOnMap = $("[data-marker='map-banner-button']");
-
     private SelenideElement buttonDrawOnMap = $("[data-marker='map/draw-button']");
-
     private SelenideElement buttonCloseMap = $("[data-marker='map-back-button']");
-
     private SelenideElement buttonZoomInMap = $("[data-marker='map-zoom-button_in']");
-
     private SelenideElement buttonZoomOutMap = $("[data-marker='map-zoom-button_out']");
-
     private SelenideElement buttonMyGeolocation = $("[data-marker='map-my-geolocation']");
 
     @Step("Открываем страницу с вакансиями")
     public VacancyBlanks openVacancyPage() {
-        open("https://www.avito.ru/sankt-peterburg/vakansii");
+        open("/sankt-peterburg/vakansii");
         return this;
     }
     @Step("Отображается логотип Авито")

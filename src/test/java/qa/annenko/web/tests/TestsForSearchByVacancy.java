@@ -9,7 +9,7 @@ import qa.annenko.web.pages.VacancyBlanks;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TestForSearchByVacancy {
+public class TestsForSearchByVacancy extends TestBase {
 
     MainPage mainPage = new MainPage();
     VacancyBlanks vacancyBlanks = new VacancyBlanks();

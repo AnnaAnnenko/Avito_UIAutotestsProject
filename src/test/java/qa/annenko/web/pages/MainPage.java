@@ -5,54 +5,75 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import java.util.List;
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
     private SelenideElement logo = $("[data-marker='search-form/logo']");
-
     private SelenideElement buttonAllCategories = $("[data-marker='top-rubricator/all-categories']");
-
     private SelenideElement searchByBlanks = $("[data-marker='search-form/suggest']");
-
     private SelenideElement buttonSearch = $("[data-marker='search-form/submit-button']");
-
     private ElementsCollection listDropDownSearchByBlanks = $$("[data-marker='suggest/list/custom-option']");
-
-    private ElementsCollection listAllCategories = $$("[data-marker^='top-rubricator/root-category-']");
-
     private SelenideElement popupYourCity = $(".tooltip-content-ITwm0");
-
     private SelenideElement buttonYesInPopupYourCity = $("[data-marker='location/tooltip-agree']");
-
     private SelenideElement buttonChangeInPopupYourCity = $("[data-marker='location/tooltip-change']");
     private SelenideElement selectRegion = $("[data-marker='search-form/region']");
+    private SelenideElement popupCityOrRegion = $("[data-marker='popup-location/content']");
 
     @Step("Нажимаем Да в автоопределении города")
     public MainPage clickYesInPopupYourCity() {
-        buttonYesInPopupYourCity.click();
+        buttonYesInPopupYourCity.shouldBe((visible), Duration.ofSeconds(10)).click();
         return this;
     }
 
     @Step("Нажимаем Изменить в автоопределении города")
     public MainPage clickChangeInPopupYourCity() {
-        buttonChangeInPopupYourCity.click();
+        buttonChangeInPopupYourCity.shouldBe((visible), Duration.ofSeconds(10)).click();
         return this;
     }
 
     @Step("Отображается попап Ваш город")
     public void checkPopupYourCityDisplay() {
-        popupYourCity.shouldBe(visible);
+        popupYourCity.shouldBe((visible), Duration.ofSeconds(10));
+    }
+
+    @Step("Отображается попап Город или регион")
+    public MainPage popupCityOrRegionDisplay() {
+        popupCityOrRegion.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Не отображается попап Ваш город")
+    public void checkPopupYourCityNotDisplay() {
+        popupYourCity.shouldNotBe((visible), Duration.ofSeconds(10));
+    }
+
+    @Step("Не отображается попап Город или регион")
+    public MainPage popupCityOrRegionNotDisplay() {
+        popupCityOrRegion.shouldNotBe(visible);
+        return this;
+    }
+
+    @Step("Нажать на элемент Город")
+    public MainPage clickCity() {
+        selectRegion.click();
+        return this;
+    }
+
+
+    @Step("В элементе город отображается {city}")
+    public void displayedCity(String city) {
+        selectRegion.shouldHave(text(city));
     }
 
     @Step("Открываем главную страницу Авито")
     public MainPage openMainPage() {
-        open("https://www.avito.ru/");
+        open("/");
         return this;
     }
 
@@ -68,7 +89,6 @@ public class MainPage {
 
         return this;
     }
-
     @Step("Нажимаем кнопку Найти")
     public void clickButtonSearch() {
         buttonSearch.click();
@@ -82,15 +102,5 @@ public class MainPage {
     @Step("Отображается логотип Авито")
     public void logoDisplay() {
         logo.shouldBe(visible);
-        sleep(10000000);
     }
-
-//    @Step("Проверяем, что отображается категория с именем")
-//    public void categoryDisplay(String nameOfCategory) {
-//        for (SelenideElement category : listAllCategories) {
-//            category.shouldHave(text(nameOfCategory));
-//        }
-//    }
-
-
 }
