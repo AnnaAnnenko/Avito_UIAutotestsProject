@@ -20,7 +20,7 @@ public class MainPage {
     private SelenideElement buttonSearch = $("[data-marker='search-form/submit-button']");
     private ElementsCollection listDropDownSearchByBlanks = $$("[data-marker='suggest/list/custom-option']");
     private SelenideElement popupYourCity = $(".tooltip-content-ITwm0");
-    private SelenideElement buttonYesInPopupYourCity = $("[data-marker='location/tooltip-agree']");
+    private SelenideElement buttonYesInPopupYourCity = $("[data-marker='location/tooltip-leave-as-is']");
     private SelenideElement buttonChangeInPopupYourCity = $("[data-marker='location/tooltip-change']");
     private SelenideElement selectRegion = $("[data-marker='search-form/region']");
     private SelenideElement popupCityOrRegion = $("[data-marker='popup-location/content']");
