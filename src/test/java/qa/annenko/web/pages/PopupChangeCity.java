@@ -9,7 +9,7 @@ public class PopupChangeCity {
 
     private SelenideElement inputCityOrRegion = $("[data-marker='popup-location/region/input']");
     private SelenideElement buttonShowBlanks = $("[data-marker='popup-location/save-button']");
-    private SelenideElement firstElementFromListCity = $("[data-marker='suggest(0)']");
+    private SelenideElement firstElementFromListCity = $("[data-marker='suggest(1)']");
 
     @Step("Установить город {city}")
     public PopupChangeCity inputCity(String city) {

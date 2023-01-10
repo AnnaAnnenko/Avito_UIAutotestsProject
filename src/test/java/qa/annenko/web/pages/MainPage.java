@@ -33,13 +33,13 @@ public class MainPage {
 
     @Step("Нажимаем Изменить в автоопределении города")
     public MainPage clickChangeInPopupYourCity() {
-        buttonChangeInPopupYourCity.shouldBe((visible), Duration.ofSeconds(10)).click();
+        buttonChangeInPopupYourCity.shouldBe((visible), Duration.ofSeconds(5)).click();
         return this;
     }
 
     @Step("Отображается попап Ваш город")
     public void checkPopupYourCityDisplay() {
-        popupYourCity.shouldBe((visible), Duration.ofSeconds(10));
+        popupYourCity.shouldBe((visible), Duration.ofSeconds(5));
     }
 
     @Step("Отображается попап Город или регион")
@@ -50,7 +50,7 @@ public class MainPage {
 
     @Step("Не отображается попап Ваш город")
     public void checkPopupYourCityNotDisplay() {
-        popupYourCity.shouldNotBe((visible), Duration.ofSeconds(10));
+        popupYourCity.shouldNotBe((visible), Duration.ofSeconds(5));
     }
 
     @Step("Не отображается попап Город или регион")
