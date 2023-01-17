@@ -89,6 +89,7 @@ public class MainPage {
 
         return this;
     }
+
     @Step("Нажимаем кнопку Найти")
     public void clickButtonSearch() {
         buttonSearch.click();

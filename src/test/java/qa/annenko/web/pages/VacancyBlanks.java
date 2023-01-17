@@ -26,6 +26,7 @@ public class VacancyBlanks {
         open("/sankt-peterburg/vakansii");
         return this;
     }
+
     @Step("Отображается логотип Авито")
     public VacancyBlanks logoDisplay() {
         logo.shouldBe(visible);

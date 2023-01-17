@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import qa.annenko.web.pages.MainPage;
 import qa.annenko.web.pages.PopupChangeCity;
 
-public class TestsForChangeCity  extends TestBase {
+public class TestsForChangeCity extends TestBase {
 
     MainPage mainPage = new MainPage();
     PopupChangeCity popupChangeCity = new PopupChangeCity();

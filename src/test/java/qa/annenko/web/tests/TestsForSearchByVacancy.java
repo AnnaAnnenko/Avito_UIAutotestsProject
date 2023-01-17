@@ -6,9 +6,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import qa.annenko.web.pages.MainPage;
 import qa.annenko.web.pages.VacancyBlanks;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
 public class TestsForSearchByVacancy extends TestBase {
 
     MainPage mainPage = new MainPage();
