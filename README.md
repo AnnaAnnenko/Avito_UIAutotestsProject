@@ -59,44 +59,48 @@ gradle clean test
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15_Avito_UIAutotestsProject_Abramova/)
 
-Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать сейчас*</strong></code>.
+Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать с параметрами*</strong></code>.
 
 <p align="center">
-  <img src="images/screen/Jenkins1.png" alt="Jenkins" width="800">
+  <img src="images/screen/JenkinsUI1.png" alt="Jenkins" width="800">
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки отобразятся
 иконки *Allure Report* и *Allure TestOPS*, которые по клику открывают страницы соответствующих отчетов.
 
 <p align="center">
-  <img src="images/screen/Jenkins2Mobile.png" alt="Jenkins" width="800">
+  <img src="images/screen/JenkinsUI2.png" alt="Jenkins" width="800">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15_Wiki_mobileAutotestsDiplomProject_Abramova/3/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15_Avito_UIAutotestsProject_Abramova/6/allure/)
 
 <p align="center">
-  <img src="images/screen/AllureReport.png" alt="allure-report1" width="900">
+  <img src="images/screen/allureUI2.png" alt="allure-report1" width="900">
+</p>
+
+<p align="center">
+  <img src="images/screen/allureUI.png" alt="allure-report1" width="900">
 </p>
 
 
-## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/18488)
+## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/18506)
 
 ### Основной дашборд
 
 <p align="center">
-  <img src="images/screen/allreMainGraphMobile.png" alt="dashboard" width="900">
+  <img src="images/screen/testOpsUI1.png" alt="dashboard" width="900">
 </p>
 
 ### Список тестов с результатами прогона
 
 <p align="center">
-  <img src="images/screen/allureTestsMobile.png" alt="dashboard" width="900">
+  <img src="images/screen/testopsUI2.png" alt="dashboard" width="900">
 </p>
 
 ### Список тест-кейсов, сформированных в результате прогона
 
 <p align="center">
-  <img src="images/screen/allureTestCaseMobile.png" alt="dashboard" width="900">
+  <img src="images/screen/images/screen/TestOpsUI3.png" alt="dashboard" width="900">
 </p>
 
 ## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
