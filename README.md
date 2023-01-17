@@ -1,4 +1,8 @@
-# <img width="5%" title="Jenkins" src="images/logo/Wikipedia.svg"> Проект автоматизации тестирования мобильного приложения Wikipedia
+#  Проект автоматизации тестирования Web-сайта Avito
+
+<p align="center">
+  <img width="" title="Jenkins" src="images/logo/Avito_logo.png">
+</p>
 
 ##	Содержание
 
@@ -29,9 +33,13 @@
 
 ## :bookmark_tabs: Реализованные проверки:
 
-- Поиск в приложении: при введении значений в окно поиска есть список с результатами
-- Поиск в приложении: результат соответствует введенным значениям
-- Смена языка в момент поиска: результаты верно меняют локализацию
+- Поиск по популярным вакансиям, отображение в соответствии с запросом поиска
+- Просмотр вакансий на карте
+- Отображение списка популярных вакансий в соответствующем разделе
+- Проверка отображения попапа "Это ваш город?" при первом открытии сайта
+- Проверка поведения при подтверждении города в попапе
+- Проверка поведения при изменении города в попапе
+- Изменение города на определенное значение, проверка сохранения
 
 ## :computer: Запуск тестов из терминала
 
@@ -39,7 +47,7 @@
 
 ```bash
 gradle clean test 
--Denvironment=browserstack
+-Denvironment=remote
 ```
 
 ### Локальный запуск тестов
@@ -58,7 +66,7 @@ gradle clean test
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки отобразятся
-иконки *Allure Report* и *Allure TestOPS*, кликнуе по клику открывают страницы соответствующих отчетов.
+иконки *Allure Report* и *Allure TestOPS*, которые по клику открывают страницы соответствующих отчетов.
 
 <p align="center">
   <img src="images/screen/Jenkins2Mobile.png" alt="Jenkins" width="800">
@@ -97,15 +105,3 @@ gradle clean test
 <p align="center">
 <img title="Telegram Notifications" src="images/screen/TelegramNotification.png">
 
-## <img width="4%" title="Selenoid" src="images/logo/Browserstack.svg"> Пример запуска теста в Browserstack
-
-К каждому тесту в отчете прилагается видео.
-
-На данном видео выполняется:
-
-- Проверка изменения языка результатов поиска при смене языка
-
-
-<p align="center">
-  <img title="Browserstack Video" src="images/video/VideoTest.gif">
-</p>
