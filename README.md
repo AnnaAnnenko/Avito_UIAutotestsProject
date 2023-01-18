@@ -45,6 +45,19 @@
 
 ### Удаленный запуск тестов
 
+ Для запуска удаленных тестов необходимо заполнить remote.properties или передать значение:
+
+* baseUrl (default = https://www.avito.ru)
+* browser (default = chrome)
+* browserVersion (default = 100)
+* remoteUrl (url address from selenoid, e.g. https://{user}:{login}@selenoid.autotests.cloud/wd/hub)
+
+Запускайте тесты с незаполненным remote.properties:
+```bash
+clean test -DremoteUrl=https://${user}:${login}@${selenoid.autotests.cloud}/wd/hub/
+```
+
+Запускайте тесты с заполненным remote.properties:
 ```bash
 gradle clean test 
 -Denvironment=remote
@@ -59,7 +72,12 @@ gradle clean test
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15_Avito_UIAutotestsProject_Abramova/)
 
-Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать с параметрами*</strong></code>.
+Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать с параметрами*</strong></code> и передать необходимые параметры сборки.
+
+
+```
+clean test -DremoteUrl=https://${LOGIN}:${PASSWORD}@${REMOTE_DRIVER_URL}/wd/hub/
+```
 
 <p align="center">
   <img src="images/screen/JenkinsUI1.png" alt="Jenkins" width="800">
@@ -100,12 +118,12 @@ gradle clean test
 ### Список тест-кейсов, сформированных в результате прогона
 
 <p align="center">
-  <img src="images/screen/images/screen/TestOpsUI3.png" alt="dashboard" width="900">
+  <img src="images/screen/TestOpsUI3.png" alt="dashboard" width="900">
 </p>
 
 ## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screen/TelegramNotification.png">
+<img title="Telegram Notifications" src="images/screen/TelegramUI.png">
 
