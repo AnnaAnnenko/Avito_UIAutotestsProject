@@ -1,4 +1,4 @@
-package qa.annenko.web.pages;
+package avito.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;

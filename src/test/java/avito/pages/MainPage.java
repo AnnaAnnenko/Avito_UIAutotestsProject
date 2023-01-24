@@ -1,4 +1,4 @@
-package qa.annenko.web.pages;
+package avito.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -9,7 +9,6 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
@@ -24,6 +23,12 @@ public class MainPage {
     private SelenideElement buttonChangeInPopupYourCity = $("[data-marker='location/tooltip-change']");
     private SelenideElement selectRegion = $("[data-marker='search-form/region']");
     private SelenideElement popupCityOrRegion = $("[data-marker='popup-location/content']");
+
+    @Step("Открываем главную страницу Авито")
+    public MainPage openPage() {
+        open("/");
+        return this;
+    }
 
     @Step("Нажимаем Да в автоопределении города")
     public MainPage clickYesInPopupYourCity() {
@@ -65,34 +70,15 @@ public class MainPage {
         return this;
     }
 
-
     @Step("В элементе город отображается {city}")
     public void displayedCity(String city) {
         selectRegion.shouldHave(text(city));
     }
 
-    @Step("Открываем главную страницу Авито")
-    public MainPage openMainPage() {
-        open("/");
-        return this;
-    }
-
-    @Step("Нажимаем кнопку Все категории")
-    public MainPage clickButtonAllCategories() {
-        buttonAllCategories.click();
-        return this;
-    }
-
     @Step("Устанавливаем курсор в Поиск по объявлениям")
     public MainPage focusToSearchByAdvt() {
         searchByBlanks.click();
-
         return this;
-    }
-
-    @Step("Нажимаем кнопку Найти")
-    public void clickButtonSearch() {
-        buttonSearch.click();
     }
 
     @Step("Выбираем {vacancy} из дропдауна поиска")

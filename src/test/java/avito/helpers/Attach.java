@@ -1,4 +1,4 @@
-package qa.annenko.helpers;
+package avito.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
@@ -11,9 +11,13 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static java.lang.String.format;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
+
+    static String autotestsUrl = "https://selenoid.autotests.cloud/video/";
+
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
@@ -36,17 +40,13 @@ public class Attach {
         );
     }
 
-
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
-        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + getVideoUrl()
-                + "' type='video/mp4'></video></body></html>";
+        return format("<html><body><video width='100%' height='100%' controls autoplay><source src='", getVideoUrl(), "' type='video/mp4'></video></body></html>");
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
-
+        String videoUrl = format(autotestsUrl, getSessionId(), ".mp4");
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {

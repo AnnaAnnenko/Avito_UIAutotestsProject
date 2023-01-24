@@ -1,9 +1,9 @@
-package qa.annenko.drivers.web;
+package avito.drivers;
 
 import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import qa.annenko.config.web.WebDriverConfig;
+import avito.config.WebDriverConfig;
 
 public class WebDriverProvider {
 
@@ -11,10 +11,10 @@ public class WebDriverProvider {
     static DesiredCapabilities capabilities = new DesiredCapabilities();
 
     public static void configure() {
-        Configuration.baseUrl = webConfig.getBaseUrl();
-        Configuration.browser = webConfig.getBrowser();
-        Configuration.browserVersion = webConfig.getBrowserVersion();
-        String remoteUrl = webConfig.getRemoteUrl();
+        Configuration.baseUrl = webConfig.baseUrl();
+        Configuration.browser = webConfig.browser();
+        Configuration.browserVersion = webConfig.browserVersion();
+        String remoteUrl = webConfig.remoteUrl();
         if (remoteUrl != null) {
             Configuration.remote = remoteUrl;
             capabilities.setCapability("enableVNC", true);

@@ -93,7 +93,7 @@ clean test -DremoteUrl=https://${LOGIN}:${PASSWORD}@${REMOTE_DRIVER_URL}/wd/hub/
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15_Avito_UIAutotestsProject_Abramova/6/allure/)
 
 <p align="center">
-  <img src="images/screen/allureUI2.png" alt="allure-report1" width="900">
+  <img src="images/screen/AllureUI2.png" alt="allure-report1" width="900">
 </p>
 
 <p align="center">

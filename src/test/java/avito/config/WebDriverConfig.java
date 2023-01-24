@@ -1,4 +1,4 @@
-package qa.annenko.config.web;
+package avito.config;
 
 
 import org.aeonbits.owner.Config;
@@ -9,18 +9,11 @@ import org.aeonbits.owner.Config;
 
 public interface WebDriverConfig extends Config{
 
-    @Key("baseUrl")
     @DefaultValue("https://www.avito.ru")
-    String getBaseUrl();
-
-    @Key("browser")
+    String baseUrl();
     @DefaultValue("chrome")
-    String getBrowser();
-
-    @Key("browserVersion")
+    String browser();
     @DefaultValue("100.0")
-    String getBrowserVersion();
-
-    @Key("remoteUrl")
-    String getRemoteUrl();
+    String browserVersion();
+    String remoteUrl();
 }
