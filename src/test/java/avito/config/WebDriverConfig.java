@@ -14,7 +14,7 @@ public interface WebDriverConfig extends Config {
     @DefaultValue("chrome")
     String browser();
     @Key("browserVersion")
-    @DefaultValue("100.0")
+    @DefaultValue("100")
     String browserVersion();
     @Key("remoteUrl")
     String remoteUrl();
