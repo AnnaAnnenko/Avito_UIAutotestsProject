@@ -7,15 +7,11 @@ import org.aeonbits.owner.Config;
 
 public interface WebDriverConfig extends Config {
 
-    @Key("baseUrl")
     @DefaultValue("https://www.avito.ru")
     String baseUrl();
-    @Key("browser")
     @DefaultValue("chrome")
     String browser();
-    @Key("browserVersion")
-    @DefaultValue("100")
+    @DefaultValue("99")
     String browserVersion();
-    @Key("remoteUrl")
     String remoteUrl();
 }
