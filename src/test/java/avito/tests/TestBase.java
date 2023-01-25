@@ -11,17 +11,14 @@ import avito.helpers.Attach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-
     @BeforeAll
     static void setUp() {
         WebDriverProvider.configure();
     }
-
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureListener", new AllureSelenide());
     }
-
     @AfterEach
     void Attachments() {
         Attach.screenshotAs("Last screenshot");

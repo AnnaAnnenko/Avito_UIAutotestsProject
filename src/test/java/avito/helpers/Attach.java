@@ -15,7 +15,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
 
-    static String autotestsUrl = "https://selenoid.autotests.cloud/video/";
+//    static String autotestsUrl = "https://selenoid.autotests.cloud/video/";
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
@@ -47,7 +47,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = autotestsUrl + getSessionId() + ".mp4";
+        String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
 
         try {
             return new URL(videoUrl);
