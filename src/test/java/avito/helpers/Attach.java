@@ -11,7 +11,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static java.lang.String.format;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
@@ -42,11 +41,14 @@ public class Attach {
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
-        return format("<html><body><video width='100%' height='100%' controls autoplay><source src='", getVideoUrl(), "' type='video/mp4'></video></body></html>");
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+                + getVideoUrl()
+                + "' type='video/mp4'></video></body></html>";
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = format(autotestsUrl, getSessionId(), ".mp4");
+        String videoUrl = autotestsUrl + getSessionId() + ".mp4";
+
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {

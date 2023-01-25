@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import avito.config.WebDriverConfig;
 
 public class WebDriverProvider {
-
     static WebDriverConfig webConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     static DesiredCapabilities capabilities = new DesiredCapabilities();
 
