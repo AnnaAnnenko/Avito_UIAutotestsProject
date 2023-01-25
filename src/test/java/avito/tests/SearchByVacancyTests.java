@@ -13,9 +13,7 @@ public class SearchByVacancyTests extends TestBase {
 
     @Test
     public void openPageFromSearch() {
-        mainPage.openPage()
-                .focusToSearchByAdvt()
-                .selectFromSearchDropdown("Вакансии");
+        mainPage.openPage().focusToSearchByAdvt().selectFromSearchDropdown("Вакансии");
         vacancyBlanks.logoDisplay()
                 .popularVacancyDisplay();
     }
@@ -30,9 +28,7 @@ public class SearchByVacancyTests extends TestBase {
 
     @Test
     public void showVacancyOnMap() {
-        mainPage.openPage()
-                .focusToSearchByAdvt()
-                .selectFromSearchDropdown("Вакансии");
+        mainPage.openPage().focusToSearchByAdvt().selectFromSearchDropdown("Вакансии");
         vacancyBlanks.showOnMap();
         vacancyBlanks.elementsOfMapDisplay();
     }

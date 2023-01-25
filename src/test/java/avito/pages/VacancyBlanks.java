@@ -5,6 +5,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.CollectionCondition.allMatch;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -39,11 +40,10 @@ public class VacancyBlanks {
         return this;
     }
 
-    @Step("Отображаемые объявления содержат текст {textInBlank}")
-    public void advertisementHasText(String textInBlank) {
-        for (SelenideElement advertisement : blankslist) {
-            advertisement.shouldHave(text(textInBlank));
-        }
+    @Step("Популярные вакансии содержат текст {textInBlank}")
+    public void advertisementHasText(String popularVacancy) {
+        popularVacancylist.shouldBe(allMatch(
+                "all elements have text", e -> e.getText().contains(popularVacancy)));
     }
 
     @Step("Отображаются элементы карты")

@@ -83,9 +83,4 @@ public class MainPage {
     public void selectFromSearchDropdown(String vacancy) {
         listDropDownSearchByBlanks.findBy(Condition.text(vacancy)).click();
     }
-
-    @Step("Отображается логотип Авито")
-    public void logoDisplay() {
-        logo.shouldBe(visible);
-    }
 }
