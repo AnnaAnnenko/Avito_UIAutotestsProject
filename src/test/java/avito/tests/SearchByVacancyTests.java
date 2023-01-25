@@ -13,8 +13,11 @@ public class SearchByVacancyTests extends TestBase {
 
     @Test
     public void openPageFromSearch() {
-        mainPage.openPage().focusToSearchByAdvt().selectFromSearchDropdown("Вакансии");
-        vacancyBlanks.logoDisplay().popularVacancyDisplay();
+        mainPage.openPage()
+                .focusToSearchByAdvt()
+                .selectFromSearchDropdown("Вакансии");
+        vacancyBlanks.logoDisplay()
+                .popularVacancyDisplay();
     }
 
     @ValueSource(strings = {"Администратор", "Кладовщик"})
@@ -27,7 +30,9 @@ public class SearchByVacancyTests extends TestBase {
 
     @Test
     public void showVacancyOnMap() {
-        mainPage.openPage().focusToSearchByAdvt().selectFromSearchDropdown("Вакансии");
+        mainPage.openPage()
+                .focusToSearchByAdvt()
+                .selectFromSearchDropdown("Вакансии");
         vacancyBlanks.showOnMap();
         vacancyBlanks.elementsOfMapDisplay();
     }
