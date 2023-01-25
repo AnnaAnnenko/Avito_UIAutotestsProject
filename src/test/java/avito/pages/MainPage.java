@@ -14,9 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPage {
 
     private SelenideElement logo = $("[data-marker='search-form/logo']");
-    private SelenideElement buttonAllCategories = $("[data-marker='top-rubricator/all-categories']");
     private SelenideElement searchByBlanks = $("[data-marker='search-form/suggest']");
-    private SelenideElement buttonSearch = $("[data-marker='search-form/submit-button']");
     private ElementsCollection listDropDownSearchByBlanks = $$("[data-marker='suggest/list/custom-option']");
     private SelenideElement popupYourCity = $(".tooltip-content-ITwm0");
     private SelenideElement buttonYesInPopupYourCity = $("[data-marker='location/tooltip-leave-as-is']");
