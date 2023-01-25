@@ -26,7 +26,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу Авито")
     public MainPage openPage() {
-        open("/");
+        open("");
         return this;
     }
 
